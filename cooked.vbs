@@ -1,19 +1,31 @@
 Set objShell = CreateObject("WScript.Shell")
 
-' Array of random search phrases
-searchPhrases = Array("Fish", "skibidi toilet", "those who know", "sigma sigma", "thick of it")
+' Array of direct URLs
+urls = Array( _
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ", _
+    "https://en.wikipedia.org/wiki/Fish", _
+    "https://skibiditoilet.io", _
+    "https://knowyourmeme.com/memes/sigma-male", _
+    "https://www.bbc.co.uk/programmes/b006t0xg", _
+    "https://reddit.com/r/memes", _
+    "https://x.com/skibiditoilet", _
+    "https://twitch.tv", _
+    "https://soundcloud.com", _
+    "https://open.spotify.com" _
+)
 
-' Loop to open multiple windows
-For i = 1 To 69699696969699696 ' You can change 5 to the number of windows you want to open
-    ' Wait for a random time between 5 and 15 seconds
-    WScript.Sleep Int((15 - 5 + 1) * Rnd + 5) * 1000
-    
-    ' Pick a random search phrase from the array
-    randomPhrase = searchPhrases(Int(Rnd * 5)) ' Random index for search phrase
-    
-    ' Encode spaces as %20 for URL
-    encodedPhrase = Replace(randomPhrase, " ", "%20")
-    
-    ' Open Chrome window with the random search query and enforced size
-    objShell.Run "chrome.exe --new-window --window-size=400,400 https://www.google.com/search?q=" & encodedPhrase
+maxIterations = 10 ' Number of times to open increasing tabs
+
+For i = 1 To maxIterations
+    WScript.Sleep 3000 ' Wait 3 seconds between each wave
+
+    urlsToOpen = ""
+    For j = 0 To i - 1
+        ' Loop through random URLs to build the command
+        rndIndex = Int(Rnd * UBound(urls) + 1)
+        urlsToOpen = urlsToOpen & urls(rndIndex) & " "
+    Next
+
+    ' Open Chrome with multiple tabs in one window
+    objShell.Run "chrome.exe --new-window --window-size=800,600 " & urlsToOpen
 Next
